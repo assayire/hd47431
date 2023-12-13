@@ -1,4 +1,27 @@
 title: Acme's Internal Wiki
 theme: clean
-baseURL: https://example.org/
+baseURL: localhost:51234/
 languageCode: en-us
+
+menus:
+  main:
+    - name: home
+      pageRef: /
+      weight: 10
+    - name: blog
+      pageRef: /posts
+      weight: 20
+    - name: github
+      url: https://github.com/johndoe
+      weight: 30
+    - name: mastodon
+      url: https://mastodon.social/@johndoe
+      weight: 40
+    - name: tags
+      pageRef: /tags
+      weight: 50
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.116.0"

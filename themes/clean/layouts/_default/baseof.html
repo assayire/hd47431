@@ -15,15 +15,39 @@
 </head>
 
 <body>
+
   <div class="home-content">
     <div id="title">Acme Knowledge Base</div>
-    <div id="links">
+    <!-- <div id="links">
       <a href="/posts">blog</a>
       <a href="https://github.com/johndoe">github</a>
       <a rel="me" href="https://mastodon.social/@johndoe">mastodon</a>
       <a href="/about/">about</a>
-    </div>
+    </div> -->
+
+    <header>
+      <!--  {{ partial "header.html" . }} -->
+    </header>
+
+    <nav class="hz-chain">
+      <ul>
+        {{ $mainMenu := .Site.Menus.main }}
+        {{ range $mainMenu }}
+        <li class="highlight">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
   </div>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
 
 </body>
 
