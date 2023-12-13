@@ -1,0 +1,4 @@
+title: Acme's Internal Wiki
+theme: clean
+baseURL: https://example.org/
+languageCode: en-us

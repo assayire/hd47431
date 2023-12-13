@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  {{- with resources.Get "/css/home.css" }}
+  {{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+  {{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</head>
+
+<body>
+  <div class="home-content">
+    <div id="title">Acme Knowledge Base</div>
+    <div id="links">
+      <a href="/posts">blog</a>
+      <a href="https://github.com/johndoe">github</a>
+      <a rel="me" href="https://mastodon.social/@johndoe">mastodon</a>
+      <a href="/about/">about</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
