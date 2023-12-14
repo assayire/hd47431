@@ -1,0 +1,147 @@
+@use 'scss/_utils';
+@import 'scss/_variables';
+@import 'scss/_header';
+
+// TODO: @use not working in Hugo !!!
+// @use 'scss/_variables' as vars;
+
+* {
+  box-sizing: border-box;
+  font-family: $base-font;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.home-content {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  background-image: radial-gradient(white, #0000);
+
+  >div {
+    margin-bottom: 20px;
+  }
+
+  >#title {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    /* margin-bottom: -20px; */
+  }
+
+  nav.hz-chain {
+    >ul>li {
+      padding-inline: 10px;
+      padding-block: 10px;
+
+      :hover a {
+        color: snow;
+      }
+    }
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+
+a {
+  color: rgba(127, 140, 141, 1);
+  text-decoration: none;
+  font-weight: bold;
+
+  :hover {
+    color: $accent-color;
+  }
+}
+
+.highlight {
+  background-image: linear-gradient(#1095c1, #1095c1);
+  background-image: linear-gradient(rgb(138, 43, 226), rgb(170, 132, 206));
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: .4s;
+
+  :hover {
+    background-size: 100% 100%;
+  }
+}
+
+#dots {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-content {
+    >#title {
+      font-weight: bold;
+      font-size: 7rem;
+      margin-bottom: -5px;
+    }
+
+    >#links {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .home-content {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+.full-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Experimenting */
+
+nav.hz-chain>ul {
+  display: flex;
+  list-style: none;
+}
+
+nav.hz-chain>ul li {
+  margin-right: 20px;
+}
+
+footer {
+  flex-grow: 1;
+  flex-basis: 70px;
+
+  border-top: 1px solid silver;
+  margin-top: 5rem;
+  text-align: center;
+
+  background-color: $blue-violet;
+  color: snow;
+}

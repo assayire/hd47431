@@ -1,0 +1,15 @@
+@mixin small {
+  font-size: 85%;
+}
+
+@mixin center {
+  text-align: center;
+}
+
+debug {
+  display: block;
+  text-align: center;
+  font-family: monospace;
+  font-size: 85%;
+  font-weight: bold;
+}

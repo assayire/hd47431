@@ -1,0 +1,14 @@
+<div class="home-content">
+  <div id="title">{{ .Site.Title }}</div>
+
+  <nav class="hz-chain">
+    <ul>
+      {{ $mainMenu := .Site.Menus.main }}
+      {{ range $mainMenu }}
+      <li class="highlight">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>

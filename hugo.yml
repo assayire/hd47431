@@ -1,4 +1,4 @@
-title: Acme's Internal Wiki
+title: Acme Knowledge Base
 theme: clean
 baseURL: localhost:51234/
 languageCode: en-us
@@ -8,9 +8,12 @@ menus:
     - name: home
       pageRef: /
       weight: 10
-    - name: blog
+    - name: posts
       pageRef: /posts
       weight: 20
+    - name: articles
+      pageRef: /articles
+      weight: 25
     - name: github
       url: https://github.com/johndoe
       weight: 30

@@ -3,44 +3,14 @@
 
 <head>
   <title>Home</title>
-  {{- with resources.Get "/css/home.css" }}
-  {{- if eq hugo.Environment "development" }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-  {{- with . | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-  {{- end }}
-  {{- end }}
-  {{- end }}
+  {{ partial "head.html" . }}
 </head>
 
 <body>
-
-  <div class="home-content">
-    <div id="title">Acme Knowledge Base</div>
-    <!-- <div id="links">
-      <a href="/posts">blog</a>
-      <a href="https://github.com/johndoe">github</a>
-      <a rel="me" href="https://mastodon.social/@johndoe">mastodon</a>
-      <a href="/about/">about</a>
-    </div> -->
-
-    <header>
-      <!--  {{ partial "header.html" . }} -->
-    </header>
-
-    <nav class="hz-chain">
-      <ul>
-        {{ $mainMenu := .Site.Menus.main }}
-        {{ range $mainMenu }}
-        <li class="highlight">
-          <a href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
-  </div>
-
+  <p>Is Home: {{ .IsHome }}</p>
+  {{ if .IsHome }}
+  {{ partial "home.html" . }}
+  {{ else }}
   <main>
     {{ block "main" . }}{{ end }}
   </main>
@@ -48,7 +18,7 @@
   <footer>
     {{ partial "footer.html" . }}
   </footer>
-
+  {{ end }}
 </body>
 
 </html>
