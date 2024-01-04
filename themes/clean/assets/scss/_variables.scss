@@ -1,4 +1,7 @@
-$base-font: 'Roboto Serif', serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,300;0,8..144,400;0,8..144,700;1,8..144,300;1,8..144,400;1,8..144,700&display=swap');
+
+$base-font: 'Libre Baskerville2', 'Roboto Serif', RobotoSerifNormalRoman-Light, serif;
+$base-font-size: 20px;
 
 $blue-violet: rgb(138, 43, 226);
 $accent-color: $blue-violet;

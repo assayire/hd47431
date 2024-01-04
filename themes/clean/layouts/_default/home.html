@@ -1,6 +1,7 @@
 {{ define "main" }}
 <debug>You are in home.html</debug>
 {{ .Content }}
+<h2>FOO BAR</h2>
 {{ range site.RegularPages }}
 <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{ .Summary }}

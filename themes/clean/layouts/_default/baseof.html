@@ -7,7 +7,6 @@
 </head>
 
 <body>
-  <p>Is Home: {{ .IsHome }}</p>
   {{ if .IsHome }}
   {{ partial "home.html" . }}
   {{ else }}
